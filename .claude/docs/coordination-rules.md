@@ -71,3 +71,25 @@ When an orchestration skill spawns multiple independent agents:
 2. Collect all results before proceeding to dependent phases
 3. If any agent is BLOCKED, surface it immediately — do not silently skip
 4. Always produce a partial report if some agents complete and others block
+
+## Engine Specialist Tiers
+
+This project supports multiple game engines. Each engine has a primary specialist and sub-specialists:
+
+### Godot Engine
+- Primary: `godot-specialist`
+- Sub-specialists: `godot-gdscript-specialist`, `godot-csharp-specialist`, `godot-shader-specialist`, `godot-gdextension-specialist`
+
+### Unity Engine
+- Primary: `unity-specialist`
+- Sub-specialists: `unity-ui-specialist`, `unity-shader-specialist`, `unity-dots-specialist`, `unity-addressables-specialist`
+
+### Unreal Engine
+- Primary: `unreal-specialist`
+- Sub-specialists: `ue-gas-specialist`, `ue-replication-specialist`, `ue-umg-specialist`, `ue-blueprint-specialist`
+
+### Ebitengine (Go 2D)
+- Primary: `ebiten-specialist`
+- Sub-specialists: `ebiten-kage-specialist` (Kage shaders)
+
+**Routing:** When code review or implementation involves engine-specific APIs, spawn the appropriate engine specialist based on project configuration.
