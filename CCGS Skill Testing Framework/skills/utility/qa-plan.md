@@ -153,6 +153,31 @@ None. `/qa-plan` is a planning utility. Story readiness gates are separate.
 
 ---
 
+### Case 6: Ebitengine Project — Routing note added to QA plan
+
+**Fixture:**
+- `technical-preferences.md` has engine set to Ebitengine or Ebiten
+- Sprint with 3 stories: 1 Logic, 1 Integration, 1 UI
+- `coding-standards.md` present
+
+**Input:** `/qa-plan sprint-005`
+
+**Expected behavior:**
+1. Skill reads engine config from `technical-preferences.md` → Ebitengine or Ebiten
+2. Skill reads stories and assigns test types per coding-standards.md
+3. QA plan includes routing section: "**Automation for Ebitengine**: Invoke `using-autoebiten` skill for CLI automation, testkit integration, and autoui"
+4. Integration story test recommendation mentions testkit patterns
+5. Skill asks "May I write to `production/qa/qa-plan-sprint-005.md`?"
+6. Plan written on approval; verdict is COMPLETE
+
+**Assertions:**
+- [ ] Ebitengine routing note appears in QA plan output
+- [ ] `using-autoebiten` skill is explicitly named
+- [ ] Integration story test recommendation aligns with testkit patterns
+- [ ] Verdict is COMPLETE
+
+---
+
 ## Protocol Compliance
 
 - [ ] Reads coding-standards.md test evidence table before assigning test types
