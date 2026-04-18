@@ -1045,6 +1045,12 @@ agents:
     last_spec_result: ""
     category: engine
 
+  - name: ebiten-ui-specialist
+    spec: CCGS Skill Testing Framework/agents/engine/ebiten/ebiten-ui-specialist.md
+    last_spec: ""
+    last_spec_result: ""
+    category: engine
+
   # Operations
   - name: devops-engineer
     spec: CCGS Skill Testing Framework/agents/operations/devops-engineer.md
