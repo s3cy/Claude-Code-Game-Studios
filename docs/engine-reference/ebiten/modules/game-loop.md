@@ -232,3 +232,61 @@ Use `ActualTPS()` to verify Update frequency. Use `ActualFPS()` for Draw frequen
 - Source: `~/Desktop/source/ebiten/run.go` (Game interface definition)
 - Source: `~/Desktop/source/ebiten/doc.go` (package documentation)
 - pkg.go.dev: https://pkg.go.dev/github.com/hajimehoshi/ebiten/v2
+
+---
+
+## EbitenUI Integration
+
+When using EbitenUI (github.com/ebitenui/ebitenui) for UI widgets, integrate the UI into the Game interface:
+
+```go
+import "github.com/ebitenui/ebitenui"
+import "github.com/ebitenui/ebitenui/input"
+
+type Game struct {
+    ui *ebitenui.UI
+}
+
+func (g *Game) Update() error {
+    // UI first - processes input and events
+    g.ui.Update()
+
+    // Check if cursor is over UI before gameplay input
+    if !input.UIHovered {
+        // Gameplay input only when NOT over UI
+        if inpututil.IsMouseButtonJustPressed(ebiten.MouseButtonLeft) {
+            g.handleGameplayClick()
+        }
+    }
+
+    return nil
+}
+
+func (g *Game) Draw(screen *ebiten.Image) {
+    // Game world first (background)
+    g.drawGameWorld(screen)
+
+    // UI on top (overlay)
+    g.ui.Draw(screen)
+}
+```
+
+**Key points:**
+- Call `ui.Update()` at the **start** of Update() — UI processes input first
+- Check `input.UIHovered` before gameplay clicks — prevents click-through
+- Call `ui.Draw()` at the **end** of Draw() — UI renders on top of game world
+- Exactly one `ebitenui.UI` instance per application
+
+**Modal dialogs:**
+For modal UI that blocks all gameplay input, use input Layer blocking:
+
+```go
+layer := &input.Layer{
+    DebugLabel: "modal",
+    EventTypes: input.LayerEventTypeAll,
+    BlockLower: true,
+    FullScreen: true,
+}
+```
+
+See `ui.md` for complete widget and layout documentation.
