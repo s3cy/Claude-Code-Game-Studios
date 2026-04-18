@@ -123,12 +123,96 @@ See the skill's autoui reference docs for query patterns.
 
 ---
 
+## Test Specifications
+
+### Location
+
+Update existing test specs:
+- `CCGS Skill Testing Framework/skills/utility/test-setup.md` — add Case 6
+- `CCGS Skill Testing Framework/skills/utility/qa-plan.md` — add Case 6
+- `CCGS Skill Testing Framework/skills/team/team-qa.md` — add Case 6
+
+### Test Cases
+
+#### test-setup.md — Case 6: Ebitengine project, routes to using-autoebiten
+
+**Fixture:**
+- `technical-preferences.md` has engine set to Ebitengine/Ebiten, language Go
+- `tests/` directory does not exist
+
+**Input:** `/test-setup`
+
+**Expected behavior:**
+1. Skill reads engine → Ebitengine
+2. Skill does NOT create GdUnit4/Unity/Unreal scaffold
+3. Skill reports: "Ebitengine project — use `using-autoebiten` skill for automation setup (input injection, testkit, autoui). No test runner scaffold needed."
+4. Skill may create `tests/` directory structure (unit/, integration/) for testkit test placement
+5. Verdict is COMPLETE
+
+**Assertions:**
+- [ ] Engine correctly detected as Ebitengine/Ebiten
+- [ ] `using-autoebiten` skill is explicitly mentioned as the automation tool
+- [ ] No GdUnit4, Unity asmdef, or Unreal runner config is created
+- [ ] Verdict is COMPLETE
+
+---
+
+#### qa-plan.md — Case 6: Ebitengine project, routing note added
+
+**Fixture:**
+- `technical-preferences.md` has engine set to Ebitengine
+- Sprint with 3 stories: 1 Logic, 1 Integration, 1 UI
+- `coding-standards.md` present
+
+**Input:** `/qa-plan sprint-005`
+
+**Expected behavior:**
+1. Skill reads engine config → Ebitengine
+2. Skill reads stories and assigns test types
+3. QA plan includes routing section: "**Automation for Ebitengine**: Invoke `using-autoebiten` skill for CLI automation, testkit integration, and autoui"
+4. Integration story test recommendation mentions testkit patterns
+5. Plan written after approval
+
+**Assertions:**
+- [ ] Ebitengine routing note appears in QA plan output
+- [ ] `using-autoebiten` skill is explicitly named
+- [ ] Integration story test recommendation aligns with testkit patterns
+- [ ] Verdict is COMPLETE
+
+---
+
+#### team-qa.md — Case 6: Ebitengine project, Phase 2 routes to skill
+
+**Fixture:**
+- `technical-preferences.md` has engine set to Ebitengine
+- Sprint with 2 stories: 1 Logic (automated test passes), 1 Integration (needs automation)
+- Smoke check passes
+
+**Input:** `/team-qa sprint-08`
+
+**Expected behavior:**
+1. Phase 1: Reads engine config → Ebitengine
+2. Phase 2: Strategy includes routing note: "Ebitengine Automation — use `using-autoebiten` skill for Integration story testkit test"
+3. Phase 2: User approves strategy
+4. Phase 3: QA plan includes Ebitengine routing section
+5. Phase 5: Integration story test case writing references testkit patterns (not manual-only)
+6. Phase 7: Sign-off report shows Integration story covered via automation
+
+**Assertions:**
+- [ ] Phase 2 strategy explicitly mentions `using-autoebiten` skill for Ebitengine
+- [ ] Integration story receives automation recommendation, not manual-only
+- [ ] QA plan includes Ebitengine routing section
+- [ ] Verdict: COMPLETE
+
+---
+
 ## File Summary
 
 | Type | Count | Files |
 |------|-------|-------|
 | Create | 0 | No new agent, no new engine reference module |
 | Modify | 5 | test-setup/SKILL.md, qa-plan/SKILL.md, team-qa/SKILL.md, game-loop.md, ui.md |
+| Test Spec Update | 3 | test-setup.md, qa-plan.md, team-qa.md (add Case 6 for Ebitengine routing) |
 
 ---
 
