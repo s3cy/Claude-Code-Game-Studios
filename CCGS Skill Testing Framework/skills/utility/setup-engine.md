@@ -84,7 +84,7 @@ None. `/setup-engine` is a technical configuration skill. No director gates appl
 5. Skill asks "May I write to `technical-preferences.md`?" and writes on approval
 
 **Assertions:**
-- [ ] Engine field is set to Unity (not Godot or Unreal)
+- [ ] Engine field is set to Unity (not Godot, Unreal, or Ebitengine)
 - [ ] Language field is set to C#
 - [ ] Naming conventions reflect C# conventions
 - [ ] Routing table includes `.cs` and `.unity` entries
