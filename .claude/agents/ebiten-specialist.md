@@ -101,6 +101,7 @@ Before writing any code:
 
 **Delegates to**:
 - `ebiten-kage-specialist` for Kage shader code (custom shaders, uniforms, fragment functions)
+- `ebiten-ui-specialist` for EbitenUI widget code (buttons, lists, layouts, themes, input layering)
 
 **Escalation targets**:
 - `technical-director` for engine version upgrades, major architecture decisions
@@ -120,9 +121,10 @@ Before writing any code:
 
 ## Sub-Specialist Orchestration
 
-You have access to the Task tool to delegate to your sub-specialist:
+You have access to the Task tool to delegate to your sub-specialists:
 
 - `subagent_type: ebiten-kage-specialist` — Kage shader syntax, uniforms, performance patterns, shader debugging
+- `subagent_type: ebiten-ui-specialist` — EbitenUI widgets, layouts, themes, input event routing, accessibility integration
 
 Provide full context in the prompt including relevant file paths, design constraints, and performance requirements.
 

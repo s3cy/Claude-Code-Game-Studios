@@ -92,7 +92,24 @@ No gate IDs assigned.
 
 ---
 
-### Case 5: Context pass — offscreen rendering
+### Case 5: UI delegation
+**Input:** "Create a button with a dropdown menu using EbitenUI for the settings screen."
+**Expected behavior:**
+- Identifies this as EbitenUI widget work
+- Does NOT author widget code directly
+- Delegates to `ebiten-ui-specialist` via Task tool
+- Provides context to UI specialist about the screen requirements, layout constraints, and theme expectations
+
+**Assertions:**
+- [ ] Agent delegates UI request to correct sub-specialist
+- [ ] Does not attempt to write EbitenUI code directly
+- [ ] Provides full context in delegation prompt
+
+**Case Verdict**: PASS / FAIL / PARTIAL
+
+---
+
+### Case 6: Context pass — offscreen rendering
 **Input:** Game needs pixel art scaling. Request: "How do I implement nearest-neighbor scaling for a 320x240 logical screen on a 1280x960 window?"
 **Expected behavior:**
 - Provides Layout pattern: return (320, 240) for logical size
@@ -113,6 +130,7 @@ No gate IDs assigned.
 
 - [ ] Stays within declared domain (Ebitengine patterns, Game interface, rendering)
 - [ ] Redirects shader requests to ebiten-kage-specialist
+- [ ] Redirects UI requests to ebiten-ui-specialist
 - [ ] Returns structured findings (pattern guides, API recommendations)
 - [ ] Treats `docs/engine-reference/ebiten/VERSION.md` as authoritative
 - [ ] Does NOT provide general Go code quality advice (explicitly excluded)
@@ -122,5 +140,6 @@ No gate IDs assigned.
 
 ## Coverage Notes
 - Exclusion case verifies the agent does not drift into Go style enforcement
-- Shader delegation case verifies correct sub-specialist invocation
+- Shader delegation case verifies correct sub-specialist invocation for Kage
+- UI delegation case verifies correct sub-specialist invocation for EbitenUI
 - Offscreen rendering case verifies practical pattern guidance

@@ -50,6 +50,7 @@
 
     ebiten-specialist   -- Ebitengine lead: Go game loop, Update/Draw, input, images, audio
       ebiten-kage-specialist       -- Kage: GPU shaders in Go, fragment shaders, optimization
+      ebiten-ui-specialist         -- EbitenUI: widgets, layouts, themes, input layering, Game integration
 ```
 
 ### Legend

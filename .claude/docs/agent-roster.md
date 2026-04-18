@@ -94,3 +94,4 @@ domain lead) should delegate to specialists.
 | ---- | ---- | ---- | ---- |
 | `ebiten-specialist` | Ebitengine Core | Sonnet | Game loop, Update/Draw pattern, input handling, image rendering, audio |
 | `ebiten-kage-specialist` | Kage Shaders | Sonnet | GPU shaders in Go, fragment shaders, performance optimization |
+| `ebiten-ui-specialist` | EbitenUI Widgets | Sonnet | Container hierarchy, layouts, themes, input layering, Game integration |

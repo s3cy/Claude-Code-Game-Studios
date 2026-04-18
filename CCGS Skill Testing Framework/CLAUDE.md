@@ -60,7 +60,7 @@ unity       → unity-specialist, unity-ui-specialist, unity-shader-specialist,
               unity-dots-specialist, unity-addressables-specialist
 unreal      → unreal-specialist, ue-gas-specialist, ue-replication-specialist,
               ue-umg-specialist, ue-blueprint-specialist
-ebiten      → ebiten-specialist, ebiten-kage-specialist
+ebiten      → ebiten-specialist, ebiten-kage-specialist, ebiten-ui-specialist
 operations  → devops-engineer, security-engineer, performance-analyst,
               analytics-engineer, community-manager
 creative    → writer, world-builder, game-designer, economy-designer,
