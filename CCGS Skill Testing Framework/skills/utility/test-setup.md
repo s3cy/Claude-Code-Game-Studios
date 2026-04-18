@@ -151,6 +151,29 @@ None. `/test-setup` is a scaffolding utility. No director gates apply.
 
 ---
 
+### Case 6: Ebitengine Project — Routes to using-autoebiten skill
+
+**Fixture:**
+- `technical-preferences.md` has engine set to Ebitengine or Ebiten, language Go
+- `tests/` directory does not exist
+
+**Input:** `/test-setup`
+
+**Expected behavior:**
+1. Skill reads engine from `technical-preferences.md` → Ebitengine or Ebiten
+2. Skill does NOT create GdUnit4, Unity asmdef, or Unreal runner scaffold
+3. Skill reports: "Ebitengine project — use `using-autoebiten` skill for automation setup (input injection, testkit, autoui). No test runner scaffold needed."
+4. Skill may create `tests/` directory structure (unit/, integration/) for testkit test placement
+5. Verdict is COMPLETE
+
+**Assertions:**
+- [ ] Engine correctly detected as Ebitengine or Ebiten
+- [ ] `using-autoebiten` skill is explicitly mentioned as the automation tool
+- [ ] No GdUnit4 runner script, Unity asmdef, or Unreal headless runner config is created
+- [ ] Verdict is COMPLETE
+
+---
+
 ## Protocol Compliance
 
 - [ ] Reads engine from `technical-preferences.md` before generating any scaffold
