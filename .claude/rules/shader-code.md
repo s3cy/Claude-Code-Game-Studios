@@ -13,6 +13,7 @@ visual quality, performance, and cross-platform compatibility.
   - `spatial_env_water.gdshader` (Godot)
   - `SG_Env_Water` (Unity Shader Graph)
   - `M_Env_Water` (Unreal Material)
+  - `env_water.kage` (Ebitengine Kage shader)
 - Use descriptive names that indicate the material purpose
 - Prefix with shader type: `spatial_`, `canvas_`, `particles_`, `post_`
 

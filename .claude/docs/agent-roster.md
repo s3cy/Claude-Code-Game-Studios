@@ -60,6 +60,7 @@ domain lead) should delegate to specialists.
 | `unreal-specialist` | Unreal Engine 5 | Sonnet | Blueprint vs C++, GAS overview, UE subsystems, Unreal optimization |
 | `unity-specialist` | Unity | Sonnet | MonoBehaviour vs DOTS, Addressables, URP/HDRP, Unity optimization |
 | `godot-specialist` | Godot 4 | Sonnet | GDScript patterns, node/scene architecture, signals, Godot optimization |
+| `ebiten-specialist` | Ebitengine | Sonnet | Go game loop, Update/Draw, input, images, audio, 2D rendering |
 
 ### Unreal Engine Sub-Specialists
 
@@ -86,3 +87,10 @@ domain lead) should delegate to specialists.
 | `godot-gdscript-specialist` | GDScript | Sonnet | Static typing, design patterns, signals, coroutines, GDScript performance |
 | `godot-shader-specialist` | Shaders/Rendering | Sonnet | Godot shading language, visual shaders, particles, post-processing |
 | `godot-gdextension-specialist` | GDExtension | Sonnet | C++/Rust bindings, native performance, custom nodes, build systems |
+
+### Ebitengine Sub-Specialists
+
+| Agent | Subsystem | Model | When to Use |
+| ---- | ---- | ---- | ---- |
+| `ebiten-specialist` | Ebitengine Core | Sonnet | Game loop, Update/Draw pattern, input handling, image rendering, audio |
+| `ebiten-kage-specialist` | Kage Shaders | Sonnet | GPU shaders in Go, fragment shaders, performance optimization |

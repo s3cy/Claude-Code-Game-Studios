@@ -49,7 +49,7 @@ point this skill runs.
 **Expected behavior:**
 1. Skill detects no existing configuration and begins fresh onboarding
 2. Skill asks for project name
-3. Skill presents 3 engine options: Godot 4, Unity, Unreal Engine 5
+3. Skill presents 4 engine options: Godot 4, Unity, Unreal Engine 5, Ebitengine
 4. User selects an engine
 5. Skill asks "May I write the initial directory structure?"
 6. Skill creates all directories defined in `directory-structure.md`
@@ -58,7 +58,7 @@ point this skill runs.
 
 **Assertions:**
 - [ ] Project name is captured before any file is written
-- [ ] Exactly 3 engine options are presented
+- [ ] Exactly 4 engine options are presented
 - [ ] "May I write" is asked for each config file individually
 - [ ] No file is written without explicit user approval
 - [ ] Handoff to `/setup-engine` occurs at the end with the chosen engine argument
@@ -165,7 +165,7 @@ point this skill runs.
 ## Coverage Notes
 
 - The case where the user rejects all engine options and provides a custom
-  engine name is not tested — the skill is designed for the three supported
+  engine name is not tested — the skill is designed for the four supported
   engines only.
 - Git initialization (if any) is not tested here; that is an infrastructure
   concern outside the skill boundary.

@@ -47,6 +47,9 @@
       godot-gdscript-specialist    -- GDScript: static typing, patterns, signals, performance
       godot-shader-specialist      -- Shaders: Godot shading language, visual shaders, VFX
       godot-gdextension-specialist -- Native: C++/Rust bindings, GDExtension, build systems
+
+    ebiten-specialist   -- Ebitengine lead: Go game loop, Update/Draw, input, images, audio
+      ebiten-kage-specialist       -- Kage: GPU shaders in Go, fragment shaders, optimization
 ```
 
 ### Legend
