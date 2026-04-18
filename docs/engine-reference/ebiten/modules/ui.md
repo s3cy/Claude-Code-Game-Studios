@@ -488,3 +488,17 @@ func createHUD(ui *ebitenui.UI) {
 - pkg.go.dev: https://pkg.go.dev/github.com/ebitenui/ebitenui
 - Examples: `~/Desktop/source/ebitenui/_examples/`
 - Integration: See `game-loop.md` for Game interface patterns
+
+---
+
+## Widget Testing
+
+For automated EbitenUI widget testing, invoke the `using-autoebiten` skill. Autoui provides:
+
+- **Widget querying by coordinates, attributes, or XPath** — Locate widgets without hardcoded positions
+- **Widget method invocation** — Click, SetText, and other actions via CLI or testkit
+- **Integration with testkit tests** — Combine widget interaction with tick-based assertions
+
+See the skill's autoui reference docs:
+- `autoui-commands.md` — CLI commands for widget interaction
+- `autoui-reference.md` — XML format, ae tags, XPath queries
