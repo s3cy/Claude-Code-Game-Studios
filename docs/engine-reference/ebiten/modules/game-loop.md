@@ -290,3 +290,19 @@ layer := &input.Layer{
 ```
 
 See `ui.md` for complete widget and layout documentation.
+
+---
+
+## Automated Testing
+
+For automated gameplay verification with Autoebiten, invoke the `using-autoebiten` skill (global user skill). Autoebiten provides:
+
+- **Input injection via CLI** — Send keyboard, mouse, and custom inputs to running games
+- **Screenshot capture** — Visual verification of game state
+- **Testkit for tick-based assertions** — Go test framework integration with Launch, Mock, StateQuery
+- **RPC control of running games** — External process control via JSON-RPC
+
+See the skill's reference docs for integration patterns:
+- `integration.md` — Patch vs Library methods
+- `testkit.md` — Black-box vs White-box testing
+- `commands.md` — CLI command reference
