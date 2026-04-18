@@ -241,6 +241,74 @@ public static class GameFactory
 
 ---
 
+### Ebitengine (Go testing)
+
+**Base helper** (`tests/helpers/gameassertions.go`):
+
+```go
+// Package helpers provides game-specific assertion utilities for [Project Name] tests.
+// Use alongside standard Go testing to reduce boilerplate in game test files.
+package helpers
+
+import (
+	"testing"
+)
+
+// AssertInRange asserts a value is within the inclusive range [min, max].
+// Use for any formula output defined in GDD Formulas sections.
+func AssertInRange(t *testing.T, value, min, max float64, label string) {
+	if value < min || value > max {
+		t.Errorf("%s %.2f is outside expected range [%.2f, %.2f]", label, value, min, max)
+	}
+}
+
+// AssertEventRaised asserts that a callback was invoked during an action.
+// Pass a pointer to a bool that the callback sets, and the action to execute.
+func AssertEventRaised(t *testing.T, wasCalled *bool, action func(), eventName string) {
+	*wasCalled = false
+	action()
+	if !*wasCalled {
+		t.Errorf("Expected event '%s' to be raised, but it was not", eventName)
+	}
+}
+```
+
+**Factory helper** (`tests/helpers/gamefactory.go`):
+
+```go
+// Package helpers provides factory methods for creating minimal test objects.
+package helpers
+
+// NewTestGame creates a minimal Ebitengine Game struct for testing.
+// Use for tests that need a Game without full initialization.
+func NewTestGame() *TestGame {
+	return &TestGame{
+		UpdateCount: 0,
+		DrawCount:   0,
+	}
+}
+
+type TestGame struct {
+	UpdateCount int
+	DrawCount   int
+}
+
+func (g *TestGame) Update() error {
+	g.UpdateCount++
+	return nil
+}
+
+func (g *TestGame) Draw(screen *ebiten.Image) {
+	g.DrawCount++
+}
+
+func (g *TestGame) Layout(outsideWidth, outsideHeight int) (int, int) {
+	return 320, 240
+}
+```
+
+---
+
 ### Unreal Engine (C++)
 
 **Base helper** (`tests/helpers/GameTestHelpers.h`):

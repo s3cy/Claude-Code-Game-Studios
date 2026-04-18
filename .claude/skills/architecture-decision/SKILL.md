@@ -242,7 +242,7 @@ Following this format:
 
 | Field | Value |
 |-------|-------|
-| **Engine** | [e.g. Godot 4.6] |
+| **Engine** | [e.g. Godot 4.6 / Unity 6 / Unreal 5.4 / Ebitengine v2.9] |
 | **Domain** | [Physics / Rendering / UI / Audio / Navigation / Animation / Networking / Core / Input] |
 | **Knowledge Risk** | [LOW / MEDIUM / HIGH — from VERSION.md] |
 | **References Consulted** | [List engine-reference docs read, e.g. `docs/engine-reference/godot/modules/physics.md`] |

@@ -107,6 +107,13 @@ Engine-specific monitoring guidance:
 - Record: Physical Memory Used (MB), Physical Memory Available
 - Alert threshold: Physical Memory Used growth > 50MB over the full soak
 
+**Ebitengine:**
+- Use runtime memory stats: `runtime.ReadMemStats(&m)`
+- Record: HeapAlloc (MB), HeapSys (MB), NumGC at each checkpoint
+- For live monitoring: build with debug flags and log memory stats periodically
+- Alert threshold: HeapAlloc growth > 20% from T+0 after the first 15 minutes
+- Note: Go's GC is aggressive; focus on trend over 3+ checkpoints, not single values
+
 ### Stability observation items (if focus = stability or all)
 
 At each checkpoint, note:

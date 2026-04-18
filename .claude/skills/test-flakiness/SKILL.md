@@ -55,6 +55,10 @@ by default.
 For Unreal projects: automation logs go to `Saved/Logs/`. Grep for
 `Result: Success` and `Result: Fail` patterns.
 
+For Ebitengine projects: Go's standard test framework outputs plain text.
+Grep for `PASS` and `FAIL` patterns in test output. For testkit-based
+integration tests using autoebiten, check for RPC error patterns.
+
 ### Option B — Local log files
 
 If a path argument is provided, read that file directly.
@@ -87,6 +91,7 @@ For each CI log or result file found, parse:
   - Godot: `PASSED` / `FAILED` adjacent to test names
   - Unreal: `Result: Success` / `Result: Fail`
   - Unity: `Test passed` / `Test failed`
+  - Ebitengine: `PASS` / `FAIL` in go test output, or `--- PASS` / `--- FAIL`
 
 Build a table: `test_id → [run1_result, run2_result, run3_result, ...]`
 

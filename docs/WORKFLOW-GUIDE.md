@@ -1385,6 +1385,9 @@ Reads existing code and generates GDD-format design documentation from it.
 | Unreal Blueprints | `ue-blueprint-specialist` | 3 |
 | Unreal replication | `ue-replication-specialist` | 3 |
 | Unreal UMG/CommonUI | `ue-umg-specialist` | 3 |
+| Ebitengine-specific help | `ebiten-specialist` | 3 |
+| Ebitengine Kage shaders | `ebiten-kage-specialist` | 3 |
+| EbitenUI widgets | `ebiten-ui-specialist` | 3 |
 
 ### Agent Hierarchy
 

@@ -173,7 +173,9 @@ relevant module reference doc. If an API is post-cutoff, flag it:
 
 ```
 ⚠️  [ClassName.method()] — Godot 4.6 (post-cutoff, HIGH risk)
-    Verified against: docs/engine-reference/godot/modules/[domain].md
+⚠️  [ebiten.Image.DrawImageShader] — Ebitengine v2.9 (shader API change)
+⚠️  [ClassName] — Unity 6000.x (post-cutoff, verify against engine-reference)
+    Verified against: docs/engine-reference/[engine]/modules/[domain].md
     Behaviour confirmed: [yes / NEEDS VERIFICATION]
 ```
 

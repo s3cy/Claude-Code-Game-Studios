@@ -105,6 +105,18 @@ ls -t Saved/Logs/ 2>/dev/null | grep -i "test\|automation" | head -5
 If no matching log found: "UE automation tests must be run via the Session
 Frontend or CI pipeline. Please confirm test status manually."
 
+**Ebitengine:**
+```bash
+go test ./... 2>&1
+```
+For testkit-based tests using autoebiten:
+```bash
+go test -v ./tests/... 2>&1
+```
+If no Go test files found: "Ebitengine tests use Go's standard test framework.
+Run `go test ./...` from the project root, or use autoebiten testkit for
+integration tests."
+
 **Unknown engine / not configured:**
 "Engine not configured in `.claude/docs/technical-preferences.md`. Run
 `/setup-engine` to specify the engine, then re-run `/smoke-check`."
