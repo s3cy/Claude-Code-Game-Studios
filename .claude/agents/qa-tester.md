@@ -129,6 +129,30 @@ bool F[SystemName]Test::RunTest(const FString& Parameters)
 }
 ```
 
+#### Ebitengine (Go)
+
+```go
+package [system]_test
+
+import (
+    "testing"
+    "[module]/[system]"
+)
+
+func Test[Scenario]_[Expected](t *testing.T) {
+    // Arrange
+    subject := [system].[TypeName]{}
+
+    // Act
+    result := subject.[Method]([args])
+
+    // Assert
+    if result != [expected] {
+        t.Errorf("[Method]() = %v, want %v", result, [expected])
+    }
+}
+```
+
 **What to test for every Logic story formula:**
 1. Normal case (typical inputs → expected output)
 2. Zero/null input (should not crash; minimum output)

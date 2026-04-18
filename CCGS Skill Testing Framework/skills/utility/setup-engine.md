@@ -160,6 +160,31 @@ None. `/setup-engine` is a technical configuration skill. No director gates appl
 
 ---
 
+### Case 6: Ebitengine + Go — Ebitengine-specific configuration
+
+**Fixture:**
+- `technical-preferences.md` contains only placeholders
+- Engine argument provided: `ebitengine` or `ebiten`
+
+**Input:** `/setup-engine ebitengine`
+
+**Expected behavior:**
+1. Skill sets engine to Ebitengine, language to Go (no language choice needed — Go-only)
+2. Naming conventions are Go-appropriate (PascalCase for exported, camelCase for private)
+3. Specialist assignments reference ebiten-specialist, ebiten-kage-specialist, ebiten-ui-specialist
+4. Routing table: `.go` → ebiten-specialist, `.kage` → ebiten-kage-specialist
+5. Skill notes: No render pipeline choice (2D-only), physics is custom or Chipmunk2D via Go
+6. Skill asks "May I write to `technical-preferences.md`?" and writes on approval; verdict is COMPLETE
+
+**Assertions:**
+- [ ] Engine field is set to Ebitengine
+- [ ] Language field is set to Go
+- [ ] Routing table includes `.go` and `.kage` entries
+- [ ] ebiten-specialist and ebiten-kage-specialist are assigned
+- [ ] Verdict is COMPLETE
+
+---
+
 ## Protocol Compliance
 
 - [ ] Presents draft configuration before asking to write
