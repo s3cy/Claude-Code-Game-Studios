@@ -54,6 +54,7 @@ Prompt the qa-lead to:
 - Flag any stories with missing acceptance criteria or missing test evidence that would block QA
 - Estimate manual QA effort (number of test sessions needed)
 - Check `tests/smoke/` for smoke test scenarios; for each, assess whether it can be verified given the current build. Produce a smoke check verdict: **PASS** / **PASS WITH WARNINGS [list]** / **FAIL [list of failures]**
+- Read `.claude/docs/technical-preferences.md` to detect the configured engine. If engine is **Ebitengine** or **Ebiten**, include in the strategy output: "**Ebitengine Automation**: Use `using-autoebiten` skill for black-box test patterns. For Integration stories without automated tests, spawn a subagent with the using-autoebiten skill context to write testkit tests."
 - Produce a strategy summary table and smoke check result:
 
   | Story | Type | Automated Required | Manual Required | Blocker? |
