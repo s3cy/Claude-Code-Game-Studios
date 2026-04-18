@@ -36,9 +36,49 @@ If no engine is specified, run an interactive engine selection process:
 
 **Question 1 — Prior experience** (ask this first, always, via `AskUserQuestion`):
 - Prompt: "Have you worked in any of these engines before?"
-- Options: `Godot` / `Unity` / `Unreal Engine 5` / `Multiple — I'll explain` / `None of them`
+- Options: `Godot` / `Unity` / `Unreal Engine 5` / `Ebitengine (Go)` / `Multiple — I'll explain` / `None of them`
 - If they pick a specific engine → recommend that engine. Prior experience outweighs all other factors. Confirm with them and skip the matrix.
 - If "None" or "Multiple" → continue to the questions below.
+
+**If Ebitengine was chosen:**
+
+Ebitengine is a 2D-only, Go-only engine. Skip the full decision matrix since the user already knows they want Go + 2D.
+
+**Ask version:**
+> "Ebitengine v2.9.9 is the current stable. Use this version?"
+> Options: `[A] Use v2.9.9 (recommended)` / `[B] Check for latest version via WebSearch`
+
+If user confirms v2.9.9, proceed. If they want to check, use WebSearch to find latest.
+
+**Update CLAUDE.md Technology Stack:**
+
+```markdown
+- **Engine**: Ebitengine v2.9.9
+- **Language**: Go
+- **Build System**: Go build (go build ./cmd/game)
+- **Asset Pipeline**: EmbedFS or ebitenutil.NewImageFromFile
+```
+
+**Populate technical-preferences.md:**
+
+```markdown
+## Engine Specialists
+- **Primary**: ebiten-specialist
+- **Shader Specialist**: ebiten-kage-specialist
+- **UI Specialist**: ebiten-specialist (no dedicated UI — code-centric)
+
+### File Extension Routing
+
+| File Extension / Type | Specialist to Spawn |
+|-----------------------|---------------------|
+| Game code (.go files) | ebiten-specialist |
+| Shader files (.kage) | ebiten-kage-specialist |
+| General architecture review | ebiten-specialist |
+```
+
+**No language selection needed** — Ebitengine is Go-only.
+
+Jump to Section 6 (Determine Knowledge Gap).
 
 **Questions 2-6 — Decision matrix inputs** (only if no prior engine experience):
 
