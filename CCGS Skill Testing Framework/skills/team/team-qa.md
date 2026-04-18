@@ -182,6 +182,34 @@ independent stories.
 
 ---
 
+### Case 6: Ebitengine Project — Phase 2 routes to using-autoebiten skill
+
+**Fixture:**
+- `technical-preferences.md` has engine set to Ebitengine or Ebiten
+- Sprint with 2 stories: 1 Logic (automated test passes), 1 Integration (needs automation)
+- Smoke check passes
+
+**Input:** `/team-qa sprint-08`
+
+**Expected behavior:**
+1. Phase 1: Reads engine config from `technical-preferences.md` → Ebitengine or Ebiten; reads sprint files; reports "Found 2 stories. Current stage: [stage]"
+2. Phase 2: Spawns `qa-lead` via Task; strategy includes routing note: "**Ebitengine Automation** — use `using-autoebiten` skill for Integration story testkit test"
+3. Phase 2: Strategy table classifies: Logic (automated), Integration (testkit needed); presents to user; AskUserQuestion: user selects "Looks good — proceed to test plan"
+4. Phase 3: QA plan produced with Ebitengine routing section; asks "May I write?"; writes on approval
+5. Phase 5: Integration story test case writing spawned via `qa-tester`; test cases reference testkit patterns (not manual-only)
+6. Phase 6: Logic story marked PASS (automated); Integration story test execution documented
+7. Phase 7: Sign-off report shows Integration story covered via automation; Verdict: APPROVED or APPROVED WITH CONDITIONS
+8. Verdict: COMPLETE
+
+**Assertions:**
+- [ ] Phase 2 strategy explicitly mentions `using-autoebiten` skill for Ebitengine
+- [ ] Integration story receives automation recommendation (testkit), not manual-only
+- [ ] QA plan includes Ebitengine routing section
+- [ ] Sign-off report Test Coverage Summary shows Integration story with automation coverage
+- [ ] Verdict: COMPLETE
+
+---
+
 ## Protocol Compliance
 
 - [ ] `AskUserQuestion` used at Phase 2 (strategy review), Phase 5 (test case approval per group), and Phase 6 (per-story manual QA result)
