@@ -77,6 +77,15 @@ After reading stories, load supporting context once (not per story):
 If no GDD is referenced in a story, note it as a gap but do not block the plan.
 The story will be classified using acceptance criteria alone.
 
+If engine is **Ebitengine** or **Ebiten**, add to the plan output:
+
+```markdown
+**Automation for Ebitengine**: Invoke `using-autoebiten` skill for:
+- CLI automation patterns (input injection, screenshots)
+- Testkit integration (Launch, Mock, StateQuery)
+- Autoui for EbitenUI widget querying
+```
+
 ---
 
 ## Phase 3: Classify Each Story
