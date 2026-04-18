@@ -201,6 +201,17 @@ Test class naming: F[SystemName]Test
 Test category naming: "MyGame.[System].[Feature]"
 ```
 
+#### Ebitengine (`Engine: Ebitengine` or `Engine: Ebiten`)
+
+Note in the README: **Ebitengine Automation**
+```
+For automated gameplay testing, use the `using-autoebiten` skill (global user skill).
+Autoebiten provides input injection, screenshot capture, and testkit for black-box testing.
+No test runner scaffold needed — Autoebiten handles game control via RPC.
+```
+
+No CI workflow scaffold for Ebitengine. Autoebiten is CLI-based; CI uses `go test` for testkit tests.
+
 ---
 
 ## Phase 4: Create CI/CD Workflow
