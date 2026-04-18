@@ -1032,6 +1032,19 @@ agents:
     last_spec_result: ""
     category: engine
 
+  # Tier: Engine - Ebitengine
+  - name: ebiten-specialist
+    spec: CCGS Skill Testing Framework/agents/engine/ebiten/ebiten-specialist.md
+    last_spec: ""
+    last_spec_result: ""
+    category: engine
+
+  - name: ebiten-kage-specialist
+    spec: CCGS Skill Testing Framework/agents/engine/ebiten/ebiten-kage-specialist.md
+    last_spec: ""
+    last_spec_result: ""
+    category: engine
+
   # Operations
   - name: devops-engineer
     spec: CCGS Skill Testing Framework/agents/operations/devops-engineer.md
