@@ -90,6 +90,6 @@ This project supports multiple game engines. Each engine has a primary specialis
 
 ### Ebitengine (Go 2D)
 - Primary: `ebiten-specialist`
-- Sub-specialists: `ebiten-kage-specialist` (Kage shaders)
+- Sub-specialists: `ebiten-ui-specialist`, `ebiten-kage-specialist` (Kage shaders)
 
 **Routing:** When code review or implementation involves engine-specific APIs, spawn the appropriate engine specialist based on project configuration.
